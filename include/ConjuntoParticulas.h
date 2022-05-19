@@ -19,11 +19,11 @@ private:
 
 public:
 
-	ConjuntoParticulas();
+    ConjuntoParticulas();
 
-	ConjuntoParticulas(int n);
+    ConjuntoParticulas(int n);
 
-	~ConjuntoParticulas();
+    ~ConjuntoParticulas();
 
 	int getCapacidad();
 
