@@ -25,9 +25,9 @@ public:
 
     ~ConjuntoParticulas();
 
-	int getCapacidad();
+    int getCapacidad();
 
-	int getUtiles();
+    int getUtiles();
 
     void agregaParticula(const Particula &unaParticula);
 

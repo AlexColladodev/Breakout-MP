@@ -37,6 +37,8 @@ void ConjuntoParticulas::redimensionaMemoria(int n){
 
 }
 
+//Fin metodos privados
+
 
 ConjuntoParticulas::ConjuntoParticulas(){
 
