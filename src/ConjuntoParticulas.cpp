@@ -67,13 +67,16 @@ ConjuntoParticulas::~ConjuntoParticulas(){
     delete [] set;
 }
 
+
 int ConjuntoParticulas::getCapacidad(){
 	return capacidad;
 }
 
+
 int ConjuntoParticulas::getUtiles(){
 	return utiles;
 }
+
 
 void ConjuntoParticulas::agregaParticula(const Particula &unaParticula){
 
@@ -81,12 +84,13 @@ void ConjuntoParticulas::agregaParticula(const Particula &unaParticula){
     if (utiles == capacidad){
         redimensionaMemoria(capacidad+TAM_BLOQUE);
     }
-    set[utiles] = p;
+    set[utiles] = unaParticula;
     utiles++;
 }
 
+
 void ConjuntoParticulas::borraParticula(int posicion){
-	
+
     if (posicion > utiles){
 
     	//Haciendo desplazamientos hacia la izquierda se borra una particula
@@ -100,6 +104,34 @@ void ConjuntoParticulas::borraParticula(int posicion){
     if ((capacidad - utiles) > TAM_BLOQUE)
         redimensionaMemoria(nueva_capacidd);
 }
+
+
+Particula ConjuntoParticulas::obtieneParticula(int posicion){
+	//Debe ser una posicion valida
+    if(posicion >= 0 && posicion < utiles){
+    	return set[posicion];
+    }
+}
+
+
+void ConjuntoParticulas::::reemplazaParticula(int posicion, const Particula &unaParticula){
+	if(posicion >=0 && posicion < utiles)
+		set[posicion] = unaParticula;
+}
+
+
+//Utilizar metodos de Particulas para mover
+void ConjuntoParticulas::moverParticulas(int ancho, int alto){
+
+	for(int i = 0; i < util; i++){
+		set.mover(ancho, alto);
+	}
+}
+
+
+
+
+
 
 
 

@@ -33,4 +33,9 @@ public:
 
     void borraParticula(int posicion);
 
+    Particula obtieneParticula(int posicion);
+
+    void reemplazaParticula(int posicion, const Particula &unaParticula);
+
+    void moverParticulas(int ancho, int alto);
 }
