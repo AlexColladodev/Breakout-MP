@@ -21,18 +21,19 @@ void ConjuntoParticulas::liberaMemoria(){
 
 
 void ConjuntoParticulas::redimensionaMemoria(int n){
-   Particula *new;
-    new = new Particula[n];
+   Particula *copia;
+    copia = new Particula[n];
 
 
     for (int i = 0; i < utiles; i++){
-        new[i] = set[i];
+        copia[i] = set[i];
     }
+    
     liberaMemoria();
 
     capacidad = n;
 
-    set = new; 
+    set = copia; 
 
 }
 
@@ -84,6 +85,7 @@ void ConjuntoParticulas::agregaParticula(const Particula &unaParticula){
     if (utiles == capacidad){
         redimensionaMemoria(capacidad+TAM_BLOQUE);
     }
+
     set[utiles] = unaParticula;
     utiles++;
 }
@@ -114,7 +116,7 @@ Particula ConjuntoParticulas::obtieneParticula(int posicion){
 }
 
 
-void ConjuntoParticulas::::reemplazaParticula(int posicion, const Particula &unaParticula){
+void ConjuntoParticulas::reemplazaParticula(int posicion, const Particula &unaParticula){
 	if(posicion >=0 && posicion < utiles)
 		set[posicion] = unaParticula;
 }
@@ -124,10 +126,24 @@ void ConjuntoParticulas::::reemplazaParticula(int posicion, const Particula &una
 void ConjuntoParticulas::moverParticulas(int ancho, int alto){
 
 	for(int i = 0; i < util; i++){
-		set.mover(ancho, alto);
+		set[i].mover(ancho, alto);
 	}
 }
 
+
+void ConjuntoParticulas::rebotar(int ancho, int alto){
+
+	for(int j = 0; j < util; j++){
+		set[j].rebotaBordes(ancho, alto);
+	}
+}
+
+
+void ConjuntoParticulas::mostrarInfo(){
+    for (int i = 0; i < utiles; i++){
+        cout << set[i].ToString() << endl;
+    }
+}
 
 
 

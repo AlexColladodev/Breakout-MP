@@ -38,4 +38,8 @@ public:
     void reemplazaParticula(int posicion, const Particula &unaParticula);
 
     void moverParticulas(int ancho, int alto);
+
+    void rebotar(int ancho, int alto);
+
+    void mostrarInfo();
 }
