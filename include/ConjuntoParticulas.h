@@ -29,6 +29,8 @@ public:
 
 	int getUtiles();
 
-    void AgregaParticula(const Particula &unaParticula);
+    void agregaParticula(const Particula &unaParticula);
+
+    void borraParticula(int posicion);
 
 }

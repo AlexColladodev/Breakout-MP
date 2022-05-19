@@ -28,7 +28,7 @@ void ConjuntoParticulas::redimensionaMemoria(int n){
     for (int i = 0; i < utiles; i++){
         new[i] = set[i];
     }
-    liberarMem();
+    liberaMemoria();
 
     capacidad = n;
 
@@ -75,14 +75,30 @@ int ConjuntoParticulas::getUtiles(){
 	return utiles;
 }
 
-void ConjuntoParticulas::AgregaParticula(const Particula &unaParticula){
+void ConjuntoParticulas::agregaParticula(const Particula &unaParticula){
 
     // Si no hay espacio suficiente se redimensiona
     if (utiles == capacidad){
-        redimensiona(capacidad+TAM_BLOQUE);
+        redimensionaMemoria(capacidad+TAM_BLOQUE);
     }
     set[utiles] = p;
     utiles++;
+}
+
+void ConjuntoParticulas::borraParticula(int posicion){
+	
+    if (posicion > utiles){
+
+    	//Haciendo desplazamientos hacia la izquierda se borra una particula
+        for (int i = 0; i < utiles; i++){
+            set[i] = set[i+1];
+        }
+    }
+
+    int nueva_capacidd = capacidad - TAM_BLOQUE;
+
+    if ((capacidad - utiles) > TAM_BLOQUE)
+        redimensionaMemoria(nueva_capacidd);
 }
 
 
