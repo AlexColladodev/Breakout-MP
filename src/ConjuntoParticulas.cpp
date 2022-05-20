@@ -3,8 +3,9 @@
 
 using namespace std;
 
-//Metodos privados para reservar, liberar y redimensionar memoria
+// Métodos privados para reservar, liberar y redimensionar memoria
 void ConjuntoParticulas::reservaMemoria(int n){
+	
     liberaMemoria();
 
     //Reservo para una cantidad de N particulas
@@ -14,27 +15,29 @@ void ConjuntoParticulas::reservaMemoria(int n){
 
 
 void ConjuntoParticulas::liberaMemoria(){
+
+    // Solo si el array contiene partículas
     if (set != 0){
         delete [] set;
         set = 0;
     }
 }
 
-
 void ConjuntoParticulas::redimensionaMemoria(int n){
+	
    Particula *copia;
-    copia = new Particula[n];
+   copia = new Particula[n];
 
 
-    for (int i = 0; i < utiles; i++){
-        copia[i] = set[i];
+   for (int i = 0; i < utiles; i++){
+       copia[i] = set[i];
     }
     
-    liberaMemoria();
+   liberaMemoria();
 
-    capacidad = n;
+   capacidad = n;
 
-    set = copia; 
+   set = copia; 
 
 }
 
@@ -50,7 +53,8 @@ ConjuntoParticulas::ConjuntoParticulas(){
 
 
 ConjuntoParticulas::ConjuntoParticulas(int n){
-	//La creacion de N particulas
+	
+    // La creacion de N particulas
     reservaMemoria(n);
 
     //Asigna N a capacidad y utiles --> Instruccion incorrecta?
@@ -68,7 +72,7 @@ ConjuntoParticulas::ConjuntoParticulas(int n){
 
 //Al eliminar todo el set eliminamos todas la memoria la cual hemos reservado
 ConjuntoParticulas::~ConjuntoParticulas(){
-    delete [] set;
+    liberaMemoria();
 }
 
 
