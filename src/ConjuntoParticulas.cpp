@@ -45,7 +45,6 @@ ConjuntoParticulas::ConjuntoParticulas(){
 
     utiles = 0;
     capacidad = 0;
-    set = 0;
 
 }
 
@@ -54,14 +53,15 @@ ConjuntoParticulas::ConjuntoParticulas(int n){
 	//La creacion de N particulas
     reservaMemoria(n);
 
-    //Asigna N a capacidad y utiles
-    utiles = n;
+    //Asigna N a capacidad y utiles --> Instruccion incorrecta?
+    utiles = 0;
     capacidad = n;
 
 
     //Crear N particulas
     for (int i = 0; i < n; i++){
         Particula nueva;
+        this->agregaParticula(nueva);
     }
 }
 
