@@ -112,9 +112,10 @@ void ConjuntoParticulas::borraParticula(int posicion){
 
 Particula ConjuntoParticulas::obtieneParticula(int posicion){
 	//Debe ser una posicion valida assert
-    assert(posicion >= 0 && posicion < utiles){
-    	return set[posicion];
-    }
+    assert(posicion >= 0 && posicion < utiles)
+
+    return set[posicion];
+    
 }
 
 
