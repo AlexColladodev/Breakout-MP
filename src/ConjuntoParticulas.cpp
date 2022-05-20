@@ -1,6 +1,7 @@
 #include "ConjuntoParticulas.h"
 #include <iostream>
 
+using namespace std;
 
 //Metodos privados para reservar, liberar y redimensionar memoria
 void ConjuntoParticulas::reservaMemoria(int n){
@@ -135,7 +136,7 @@ void ConjuntoParticulas::moverParticulas(int ancho, int alto){
 
 void ConjuntoParticulas::rebotar(int ancho, int alto){
 
-	for(int j = 0; j < util; j++){
+	for(int j = 0; j < utiles; j++){
 		set[j].rebotaBordes(ancho, alto);
 	}
 }

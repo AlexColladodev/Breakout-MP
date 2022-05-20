@@ -15,7 +15,7 @@ private:
 
     void liberaMemoria();
 
-    void redimensionarMemoria(int n);
+    void redimensionaMemoria(int n);
 
 public:
 
@@ -42,4 +42,6 @@ public:
     void rebotar(int ancho, int alto);
 
     void mostrarInfo();
-}
+};
+
+#endif
