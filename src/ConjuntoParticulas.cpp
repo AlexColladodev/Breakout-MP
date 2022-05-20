@@ -19,8 +19,6 @@ void ConjuntoParticulas::liberaMemoria(){
         delete [] set;
 
         set = 0;
-        capacidad = 0;
-        utiles = 0;
     }
 }
 
@@ -101,6 +99,7 @@ void ConjuntoParticulas::borraParticula(int posicion){
         for (int i = posicion; i < utiles - 1; i++){
             set[i] = set[i+1];
         }
+        utiles--;
     }
 
     int nueva_capacidd = capacidad - TAM_BLOQUE;
@@ -112,7 +111,7 @@ void ConjuntoParticulas::borraParticula(int posicion){
 
 Particula ConjuntoParticulas::obtieneParticula(int posicion){
 	//Debe ser una posicion valida assert
-    assert(posicion >= 0 && posicion < utiles)
+    assert(posicion >= 0 && posicion < utiles);
 
     return set[posicion];
     
