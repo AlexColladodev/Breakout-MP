@@ -9,18 +9,30 @@ using namespace std;
 const float ANCHO = 800.0;
 const float ALTO = 800.0;
 
+void start(){
+    cout << "************* INICIO *************" << endl;
+}
+
+void end(){
+    cout << "*************  FIN   *************" << endl;
+}
+
 void test1(string s) {
+    
     cout << s << endl;
+    start();
     cout << "Prueba Constructores " << endl;
     ConjuntoParticulas cp1;
     ConjuntoParticulas cp2(10);
+    end();
 }
 
 void test2(string s) {
     cout << s << endl;
+    start();
     ConjuntoParticulas cp1(5);
 
-    cout << "Conjunto Inicial " << endl;
+    cout << "Conjunto Inicial con 5 particulas" << endl;
     cp1.mostrarInfo();
     
     
@@ -31,15 +43,18 @@ void test2(string s) {
     
     cout << "----- Después de reemplazar particulas ---- " << endl;
     cp1.mostrarInfo();
+    end();
 }
 
 void test3(string s) {
     cout << s << endl;
+    start();
     ConjuntoParticulas cp1;
 
     cout << " ---- Conjunto Inicial ----" << endl;
     cp1.mostrarInfo();
     int n = 12;
+    cout << " ---- Agrego 12 particulas ----" << endl;    
     for (int i = 0; i < n; i++) {
         Particula nueva;
         cp1.agregaParticula(nueva);
@@ -47,17 +62,20 @@ void test3(string s) {
 
     cout << " ---- Conjunto Final -----" << endl;
     cp1.mostrarInfo();
+    end();
 }
 
 void test4(string s) {
     cout << s << endl;
+    start();
     ConjuntoParticulas cp1(11);
 
 
-    cout << " ---- Conjunto Inicial ----" << endl;
+    cout << " ---- Conjunto Inicial con 11 particulas al azar ----" << endl;
     cp1.mostrarInfo();
 
     int n = cp1.getUtiles();
+    cout << " ---- Elimino todas las particulas en orden aleatorio ----" << endl;
     for (int i = 0; i < n; i++) {
         int nro = cp1.getUtiles();
         if (nro > 0)
@@ -65,14 +83,18 @@ void test4(string s) {
     }
     cout << " ---- Conjunto Final -----" << endl;
     cp1.mostrarInfo();
+    end();
 }
 
 void test5(string s) {
     cout << s << endl;
+    start();
     int N = 10;
     // creación de objetos
     //---------------------------------------------------------
     ConjuntoParticulas nube(N);
+    cout << " ---- Conjunto inicial con 10 particulas -----" << endl;
+    cout << " ---- Agrego/Borro particulas al azar -----" << endl;
     for (int i = 0; i < 100; i++) {
         if ((random() % 10) > 5)
             for (int j = 0; j < 7; j++) {
@@ -89,10 +111,13 @@ void test5(string s) {
         nube.rebotar(ANCHO, ALTO);
 
     }
-
+    end();
 }
 
 int main(int argc, char* argv[]) {
+
+    
+    
     int opc = 0;
     if (argc > 1)
          opc = atoi(argv[1]);
@@ -100,11 +125,18 @@ int main(int argc, char* argv[]) {
         cout << "USO: test <nro>   donde nro indica el test a ejecutar" << endl;
 
     switch (opc){
-        case 1:{test1("\n************* Test 1 ************* "); break; } 
-        case 2:{test2("\n************* Test 2 ************* "); break; } 
-        case 3:{test3("\n************* Test 3 ************* "); break; } 
-        case 4:{test4("\n************* Test 4 ************* "); break; } 
-        case 5:{test5("\n************* Test 5 ************* "); break; } 
+        case 1:{test1("\n************* TEST 1 ************* "); break; } 
+        case 2:{test2("\n************* TEST 2 ************* "); break; } 
+        case 3:{test3("\n************* TEST 3 ************* "); break; } 
+        case 4:{test4("\n************* TEST 4 ************* "); break; } 
+        case 5:{test5("\n************* TEST 5 ************* "); break; 
+        case 6:{test1("\n************* TEST 1 ************* ");
+                test2("\n************* TEST 2 ************* ");
+                test3("\n************* TEST 3 ************* ");
+                test4("\n************* TEST 4 ************* ");
+                test5("\n************* TEST 5 ************* ");break;
+        }
+        }
         default: {cout << "Nro. de test incorrecto " << endl; break;}
     }
 
