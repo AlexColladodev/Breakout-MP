@@ -1,5 +1,6 @@
 #include "ConjuntoParticulas.h"
 #include <iostream>
+#include<assert.h>
 
 using namespace std;
 
@@ -17,6 +18,8 @@ void ConjuntoParticulas::liberaMemoria(){
     if (set != 0){
         delete [] set;
         set = 0;
+        capacidad = 0;
+        utiles = 0;
     }
 }
 
@@ -41,11 +44,8 @@ void ConjuntoParticulas::redimensionaMemoria(int n){
 //Fin metodos privados
 
 
+//Al crear el objeto directamente se hace en la definicion de la clase
 ConjuntoParticulas::ConjuntoParticulas(){
-
-    utiles = 0;
-    capacidad = 0;
-
 }
 
 
@@ -53,15 +53,14 @@ ConjuntoParticulas::ConjuntoParticulas(int n){
 	//La creacion de N particulas
     reservaMemoria(n);
 
-    //Asigna N a capacidad y utiles --> Instruccion incorrecta?
-    utiles = 0;
+    
+    utiles = n;
     capacidad = n;
 
 
     //Crear N particulas
     for (int i = 0; i < n; i++){
         Particula nueva;
-        this->agregaParticula(nueva);
     }
 }
 
@@ -99,7 +98,7 @@ void ConjuntoParticulas::borraParticula(int posicion){
     if (posicion > utiles){
 
     	//Haciendo desplazamientos hacia la izquierda se borra una particula
-        for (int i = 0; i < utiles; i++){
+        for (int i = 0; i < utiles - 1; i++){
             set[i] = set[i+1];
         }
     }
@@ -112,8 +111,8 @@ void ConjuntoParticulas::borraParticula(int posicion){
 
 
 Particula ConjuntoParticulas::obtieneParticula(int posicion){
-	//Debe ser una posicion valida
-    if(posicion >= 0 && posicion < utiles){
+	//Debe ser una posicion valida assert
+    assert(posicion >= 0 && posicion < utiles){
     	return set[posicion];
     }
 }

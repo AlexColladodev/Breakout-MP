@@ -8,8 +8,8 @@ const int TAM_BLOQUE = 3;
 class ConjuntoParticulas{
 private:
     Particula *set = 0; // --> Mejor inicializarlo directamente al construir un objeto, sino salta error
-    int capacidad;
-    int utiles;
+    int capacidad = 0;
+    int utiles = 0;
 
     void reservaMemoria(int n);
 
