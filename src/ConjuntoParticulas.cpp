@@ -145,6 +145,8 @@ void ConjuntoParticulas::mostrarInfo(){
     for (int i = 0; i < utiles; i++){
         cout << set[i].toString() << endl;
     }
+    cout << "Utiles -> " << utiles;
+    cout << "Capacidad -> " << capacidad;
 }
 
 
