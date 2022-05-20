@@ -97,7 +97,7 @@ void ConjuntoParticulas::borraParticula(int posicion){
 
     	//Haciendo desplazamientos hacia la izquierda se borra una particula
         for (int i = posicion; i < utiles - 1; i++){
-            set[i] = set[i+1];
+            set[posicion] = set[i+1];
         }
         utiles--;
     }
