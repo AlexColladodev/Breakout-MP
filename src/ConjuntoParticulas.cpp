@@ -72,7 +72,7 @@ ConjuntoParticulas::ConjuntoParticulas(int n){
 
 //Al eliminar todo el set eliminamos todas la memoria la cual hemos reservado
 ConjuntoParticulas::~ConjuntoParticulas(){
-    liberaMemoria();
+    delete [] set;
 }
 
 
