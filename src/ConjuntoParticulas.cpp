@@ -56,6 +56,7 @@ ConjuntoParticulas::ConjuntoParticulas(int n){
     
     utiles = n;
     capacidad = n;
+    set = 0;
 
 
     //Crear N particulas
