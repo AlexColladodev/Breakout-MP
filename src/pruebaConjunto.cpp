@@ -25,7 +25,7 @@ void test2(string s) {
     
     
     Particula nueva(5.0, 5.0, 0.0, 0.0, 5);
-    int n = cp1.GetUtiles();
+    int n = cp1.getUtiles();
     for (int i = -1; i <= n + 1; i++)
         cp1.reemplazaParticula(i, nueva);
     
@@ -57,9 +57,9 @@ void test4(string s) {
     cout << " ---- Conjunto Inicial ----" << endl;
     cp1.mostrarInfo();
 
-    int n = cp1.GetUtiles();
+    int n = cp1.getUtiles();
     for (int i = 0; i < n; i++) {
-        int nro = cp1.GetUtiles();
+        int nro = cp1.getUtiles();
         if (nro > 0)
             cp1.borraParticula(random() % nro);
     }
@@ -80,12 +80,12 @@ void test5(string s) {
                 nube.agregaParticula(nueva);
             } else {
             for (int j = 0; j < 7; j++) {
-                int nro = nube.GetUtiles();
+                int nro = nube.getUtiles();
                 if (nro > 0)
                     nube.borraParticula((random() % nro));
             }
         }
-        nube.mover(ANCHO, ALTO);
+        nube.moverParticulas(ANCHO, ALTO);
         nube.rebotar(ANCHO, ALTO);
 
     }

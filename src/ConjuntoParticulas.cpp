@@ -128,7 +128,7 @@ void ConjuntoParticulas::reemplazaParticula(int posicion, const Particula &unaPa
 //Utilizar metodos de Particulas para mover
 void ConjuntoParticulas::moverParticulas(int ancho, int alto){
 
-	for(int i = 0; i < util; i++){
+	for(int i = 0; i < utiles; i++){
 		set[i].mover(ancho, alto);
 	}
 }
@@ -144,7 +144,7 @@ void ConjuntoParticulas::rebotar(int ancho, int alto){
 
 void ConjuntoParticulas::mostrarInfo(){
     for (int i = 0; i < utiles; i++){
-        cout << set[i].ToString() << endl;
+        cout << set[i].toString() << endl;
     }
 }
 

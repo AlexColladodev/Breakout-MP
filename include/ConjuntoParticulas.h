@@ -7,7 +7,7 @@ const int TAM_BLOQUE = 3;
 
 class ConjuntoParticulas{
 private:
-    Particula *set ;
+    Particula *set;
     int capacidad;
     int utiles;
 
