@@ -17,6 +17,7 @@ void ConjuntoParticulas::reservaMemoria(int n){
 void ConjuntoParticulas::liberaMemoria(){
     if (set != 0){
         delete [] set;
+
         set = 0;
         capacidad = 0;
         utiles = 0;
@@ -55,8 +56,7 @@ ConjuntoParticulas::ConjuntoParticulas(int n){
 
     
     utiles = n;
-    capacidad = n;
-
+    //Capacidad ya es alterada en reservaMemoria
 
     //Crear N particulas
     for (int i = 0; i < n; i++){
@@ -95,10 +95,10 @@ void ConjuntoParticulas::agregaParticula(const Particula &unaParticula){
 
 void ConjuntoParticulas::borraParticula(int posicion){
 
-    if (posicion > utiles){
+    if (posicion <= utiles){
 
     	//Haciendo desplazamientos hacia la izquierda se borra una particula
-        for (int i = 0; i < utiles - 1; i++){
+        for (int i = posicion; i < utiles - 1; i++){
             set[i] = set[i+1];
         }
     }
