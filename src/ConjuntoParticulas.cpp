@@ -97,7 +97,7 @@ void ConjuntoParticulas::borraParticula(int posicion){
 
     	//Haciendo desplazamientos hacia la izquierda se borra una particula
         for (int i = posicion; i < utiles - 1; i++){
-            set[posicion] = set[i+1];
+            set[i] = set[i+1];
         }
         utiles--;
     }
@@ -145,8 +145,8 @@ void ConjuntoParticulas::mostrarInfo(){
     for (int i = 0; i < utiles; i++){
         cout << set[i].toString() << endl;
     }
-    cout << "Utiles -> " << utiles;
-    cout << "Capacidad -> " << capacidad;
+    cout << "Utiles -> " << utiles << endl;
+    cout << "Capacidad -> " << capacidad << endl;
 }
 
 
