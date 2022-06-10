@@ -1,6 +1,7 @@
 #include "ConjuntoParticulas.h"
 #include <iostream>
 #include<assert.h>
+#include<cmath>
 
 using namespace std;
 
@@ -223,8 +224,7 @@ const int & ConjuntoParticulas::operator[] (int i) const{
     if (i > this->capacidad)
         // Devuelve una referencia a NULL pues se encuentra fuera de set
         return NULL;
-    else
-        //return this->set[i]; //No se puede devolver una Particula ya que la cabecera indica que se devuelve una const int
+        //else return this->set[i]; //No se puede devolver una Particula ya que la cabecera indica que se devuelve una const int
 }
 
 
@@ -244,15 +244,61 @@ ConjuntoParticulas & ConjuntoParticulas::operator + (const Particula &unaParticu
 // Sobrecarga operator == 
 bool ConjuntoParticulas::operator == (const ConjuntoParticulas &unConjunto){
 
-    return this->utiles == unConjunto.utiles && this->set == unConjunto.set;
+    return this->utiles == unConjunto.GetUtiles() && this->set == unConjunto.set;
 
 }
 
 // NEW distanciaPromedio
+double ConjuntoParticulas::distanciaPromedio(Particula unaParticula) const{
+
+    double distancia = 0;
+    double Ax, Ay, Bx, By; //--> Son las X e Y de cada una de las particulas
+    Bx = unaParticula.GetX();
+    By = unaParticula.GetY();
+    
+    for(int i = 0; i < utiles; i++){
+        Ax = set[i].GetX();
+        Ay = set[i].GetY();
+
+        /*
+        Ax = obtieneParticula(i).GetX();
+        Ay = obtieneParticula(i).GetY();
+        */        
+
+        distancia += sqrt(pow(Bx - Ax, 2) + pow(By - Ay, 2));
+    }
+
+    return distancia / utiles;
+}
+
+double ConjuntoParticulas::distanciaPromedio() const{
+
+    double distancia = 0;
+    double Ax, Ay; //--> Son las X e Y de cada una de las particulas
+
+    
+    for(int i = 0; i < utiles; i++){
+        Ax = set[i].GetX();
+        Ay = set[i].GetY();
+
+        /*
+        Ax = obtieneParticula(i).GetX();
+        Ay = obtieneParticula(i).GetY();
+        */        
+
+        distancia += sqrt(pow(0 - Ax, 2) + pow(0 - Ay, 2));
+    }
+
+    return distancia / utiles;
+}
 
 // NEW
 // Sobrecarga del operador <
+bool ConjuntoParticulas::operator < (const ConjuntoParticulas &unConjunto) const{
 
+    return this->distanciaPromedio() < unConjunto.distanciaPromedio();
+
+}
 
 
 

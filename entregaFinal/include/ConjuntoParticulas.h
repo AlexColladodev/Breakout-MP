@@ -57,16 +57,11 @@ public:
 
     ConjuntoParticulas &operator + (const Particula &unaParticula) const;
 
+    double distanciaPromedio(Particula unaParticula) const;
 
+    double distanciaPromedio() const; //Necesario este metodo para hacer el operador < con (0,0)
 
-
-
-
-
-
-
-
-
+    bool operator < (const ConjuntoParticulas &unConjunto) const;
 };
 
 #endif
