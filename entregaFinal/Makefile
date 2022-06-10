@@ -13,7 +13,7 @@ all : $(BIN)/pruebaConjunto  clean
 # Objetos
 
 $(OBJ)/pruebaConjunto.o : $(SRC)/pruebaConjunto.cpp
-	g++ -c -o $(OBJ)/pruebaConjunto.o $(SRC)/pruebaConjunto.cpp -I$(INCLUDE)
+	g++ -c -o $(OBJ)/pruebaConjuntoFinal.o $(SRC)/pruebaConjuntoFinal.cpp -I$(INCLUDE)
 
 $(OBJ)/ConjuntoParticulas.o : $(SRC)/ConjuntoParticulas.cpp 
 	g++ -c -o $(OBJ)/ConjuntoParticulas.o $(SRC)/ConjuntoParticulas.cpp -I$(INCLUDE)
@@ -25,7 +25,7 @@ $(OBJ)/Particula.o : $(SRC)/Particula.cpp
 # Ejecutable
 
 $(BIN)/pruebaConjunto : $(OBJ)/pruebaConjunto.o $(OBJ)/ConjuntoParticulas.o $(OBJ)/Particula.o 
-	g++ -o $(BIN)/pruebaConjunto $(OBJ)/pruebaConjunto.o $(OBJ)/ConjuntoParticulas.o $(OBJ)/Particula.o 
+	g++ -o $(BIN)/pruebaConjuntoFinal $(OBJ)/pruebaConjuntoFinal.o $(OBJ)/ConjuntoParticulas.o $(OBJ)/Particula.o 
 
 
 # Limpieza de archivos

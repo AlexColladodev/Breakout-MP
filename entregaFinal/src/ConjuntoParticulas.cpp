@@ -139,7 +139,7 @@ void ConjuntoParticulas::borraParticula(int posicion){
 }
 
 
-Particula ConjuntoParticulas::obtieneParticula(int posicion){
+Particula ConjuntoParticulas::obtieneParticula(int posicion) const{
 	// Debe ser una posicion valida assert
     assert(posicion >= 0 && posicion < utiles);
 
@@ -173,10 +173,10 @@ void ConjuntoParticulas::rebotar(int ancho, int alto){
 
 void ConjuntoParticulas::mostrarInfo(){
     for (int i = 0; i < utiles; i++){
-        cout << set[i].toString() << endl;
+        cout << set[i].toString() << std::endl;
     }
-    cout << "Utiles -> " << utiles << endl;
-    cout << "Capacidad -> " << capacidad << endl;
+    cout << "Utiles -> " << utiles << std::endl;
+    cout << "Capacidad -> " << capacidad << std::endl;
 }
 
 // NEW
@@ -193,11 +193,12 @@ ConjuntoParticulas & ConjuntoParticulas::operator = (const ConjuntoParticulas &u
 
 // NEW
 // Sobrecarga operator <<
-ostream& operator << (ostream &flujo, const ConjuntoParticulas &unConjunto){
+std::ostream& operator << (std::ostream & flujo, const ConjuntoParticulas &unConjunto){
 
                         //Error unConjunto.utiles
-    for (int i = 0; i < unConjunto.GetUtiles(); i++)
-        flujo << unConjunto[i] << endl;
+    for (int i = 0; i < unConjunto.GetUtiles(); i++){
+        flujo << unConjunto.obtieneParticula(i) << std::endl;        
+    }
 
     return flujo;
 }

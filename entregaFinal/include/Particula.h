@@ -2,6 +2,7 @@
 #define _PARTICULA_
 
 #include <iostream>
+
 const int MAX_VEL = 5;
 const int MIN_DIM = 600;
 const float RADIO = 7.0;
@@ -70,10 +71,10 @@ public:
     void intercambiaVelocidad(Particula & otra);
 
     // Sobrecarga operator << 
-    friend ostream& operator << (ostream &flujo, const Particula &unaParticula);
+    friend std::ostream & operator << (std::ostream &flujo, const Particula &unaParticula);
 
     // Sobrecarga operator >>
-    friend istream& operator >> (istream &flujo, Particula &unaParticula);
+    friend std::istream & operator >> (std::istream &flujo, Particula &unaParticula);
 
     // Sobrecarga operator ==
     bool operator == (const Particula &unaParticula);

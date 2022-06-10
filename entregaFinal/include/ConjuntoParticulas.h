@@ -25,6 +25,8 @@ public:
 
     ~ConjuntoParticulas();
 
+    ConjuntoParticulas(const ConjuntoParticulas &cp);
+
     int GetCapacidad() const;
 
     int GetUtiles() const;
@@ -33,7 +35,7 @@ public:
 
     void borraParticula(int posicion);
 
-    Particula obtieneParticula(int posicion);
+    Particula obtieneParticula(int posicion) const;
 
     void reemplazaParticula(int posicion, const Particula &unaParticula);
 
@@ -52,6 +54,8 @@ public:
     const int &operator [](int i) const;
 
     bool operator ==(const ConjuntoParticulas &unConjunto);
+
+    friend std::ostream & operator << (std::ostream & flujo, const ConjuntoParticulas &unConjunto);
 
     ConjuntoParticulas &operator = (const ConjuntoParticulas &unConjunto);
 

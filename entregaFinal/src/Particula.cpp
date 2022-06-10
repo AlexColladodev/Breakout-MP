@@ -2,8 +2,6 @@
 #include <cmath>
 #include <iostream>
 
-
-
 using namespace std;
 
 // constructor sin parametros.
@@ -145,16 +143,16 @@ void Particula::intercambiaVelocidad(Particula & otra) {
 }
 
 // Sobrecarga operador <<
-ostream& operator << (ostream &flujo, const Particula &unaParticula){
+std::ostream& operator << (std::ostream &flujo, const Particula &unaParticula){
 
-    flujo << unaParticula.ToString();
+    flujo << unaParticula.toString();
     flujo << endl;
     return flujo;
 
 }
 
 // Sobrecarga operador >>
-istream& operator >> (istream &flujo, Particula &unaParticula){
+std::istream& operator >> (std::istream &flujo, Particula &unaParticula){
 
     flujo >> unaParticula.x >> unaParticula.y >> unaParticula.dy >> unaParticula.radio;
     return flujo;
@@ -164,6 +162,6 @@ istream& operator >> (istream &flujo, Particula &unaParticula){
 // Sobrecarga operador == (se comparan dos partículas)
 bool Particula::operator == (const Particula &unaParticula){
 
-    return Distancia(unaParticula) < MIN_DISTANCIA;
+    return distancia(unaParticula) < MIN_DISTANCIA;
 
 }
