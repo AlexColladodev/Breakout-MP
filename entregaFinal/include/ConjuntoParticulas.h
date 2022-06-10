@@ -42,6 +42,31 @@ public:
     void rebotar(int ancho, int alto);
 
     void mostrarInfo();
+
+    //Cabeceras de Parte 2 Proyecto
+
+    void Copiar(const ConjuntoParticulas &unConjunto);
+
+    Particula &operator [](int i);
+
+    const int &operator [](int i) const;
+
+    bool operator ==(const ConjuntoParticulas &unConjunto);
+
+    ConjuntoParticulas &operator = (const ConjuntoParticulas &unConjunto);
+
+    ConjuntoParticulas &operator + (const Particula &unaParticula) const;
+
+
+
+
+
+
+
+
+
+
+
 };
 
 #endif

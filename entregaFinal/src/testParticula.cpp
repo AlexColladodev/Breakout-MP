@@ -1,8 +1,8 @@
 #include <iostream>
-#include "particula.h"
+#include "Particula.h"
 #include <cmath>
 #include <string>
-#include <cstdlib> 
+#include <cstdlib>
 
 using namespace std;
 int main(){
@@ -22,6 +22,7 @@ int main(){
     cout << "Estado 3: " << p.toString() << endl;
     
     
+    //M_PI Constante de cmath
     float grados = 180;
     float rads = grados * (M_PI / 180.0);
     p.rotar(5, 5, rads);

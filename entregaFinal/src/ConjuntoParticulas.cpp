@@ -51,7 +51,7 @@ void ConjuntoParticulas::Copiar(const ConjuntoParticulas &unConjunto){
     // A continuación se reserva memoria y se copia set
     reservaMemoria(unConjunto.capacidad);
 
-    for (int i = 0; i < unConjunto.utiles(); i++)
+    for (int i = 0; i < unConjunto.GetUtiles(); i++)
         this->set[i] = unConjunto.set[i];
 }
 
@@ -194,7 +194,8 @@ ConjuntoParticulas & ConjuntoParticulas::operator = (const ConjuntoParticulas &u
 // Sobrecarga operator <<
 ostream& operator << (ostream &flujo, const ConjuntoParticulas &unConjunto){
 
-    for (int i = 0; i < unConjunto.utiles; i++)
+                        //Error unConjunto.utiles
+    for (int i = 0; i < unConjunto.GetUtiles(); i++)
         flujo << unConjunto[i] << endl;
 
     return flujo;
@@ -223,7 +224,7 @@ const int & ConjuntoParticulas::operator[] (int i) const{
         // Devuelve una referencia a NULL pues se encuentra fuera de set
         return NULL;
     else
-        return this->set[i];
+        //return this->set[i]; //No se puede devolver una Particula ya que la cabecera indica que se devuelve una const int
 }
 
 
