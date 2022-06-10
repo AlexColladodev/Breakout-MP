@@ -51,7 +51,7 @@ public:
 
     Particula &operator [](int i);
 
-    const int &operator [](int i) const;
+    const Particula &operator [](int i) const;
 
     bool operator ==(const ConjuntoParticulas &unConjunto);
 
@@ -59,7 +59,7 @@ public:
 
     ConjuntoParticulas &operator = (const ConjuntoParticulas &unConjunto);
 
-    ConjuntoParticulas &operator + (const Particula &unaParticula) const;
+    ConjuntoParticulas operator + (const Particula &unaParticula) const;
 
     double distanciaPromedio(Particula unaParticula) const;
 

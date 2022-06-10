@@ -146,7 +146,6 @@ void Particula::intercambiaVelocidad(Particula & otra) {
 std::ostream& operator << (std::ostream &flujo, const Particula &unaParticula){
 
     flujo << unaParticula.toString();
-    flujo << endl;
     return flujo;
 
 }

@@ -193,11 +193,11 @@ ConjuntoParticulas & ConjuntoParticulas::operator = (const ConjuntoParticulas &u
 
 // NEW
 // Sobrecarga operator <<
-std::ostream& operator << (std::ostream & flujo, const ConjuntoParticulas &unConjunto){
+std::ostream & operator << (std::ostream & flujo, const ConjuntoParticulas &unConjunto){
 
                         //Error unConjunto.utiles
     for (int i = 0; i < unConjunto.GetUtiles(); i++){
-        flujo << unConjunto.obtieneParticula(i) << std::endl;        
+        flujo << unConjunto[i] << std::endl;        
     }
 
     return flujo;
@@ -219,26 +219,25 @@ Particula & ConjuntoParticulas::operator [] (int i){
 
 }
 
-const int & ConjuntoParticulas::operator[] (int i) const{
+const Particula & ConjuntoParticulas::operator[] (int i) const{
 
     assert (i >= 0);
-    if (i > this->capacidad)
+    if (i <= this->capacidad){
         // Devuelve una referencia a NULL pues se encuentra fuera de set
-        return NULL;
-        //else return this->set[i]; //No se puede devolver una Particula ya que la cabecera indica que se devuelve una const int
+        return this->set[i];
+    }
 }
 
 
 // NEW
 // Sobrecarga operator +
-ConjuntoParticulas & ConjuntoParticulas::operator + (const Particula &unaParticula) const{
+ConjuntoParticulas ConjuntoParticulas::operator + (const Particula &unaParticula) const{
 
     ConjuntoParticulas total = *this;
 
     total.agregaParticula(unaParticula);
 
     return total;
-
 }
 
 // NEW
