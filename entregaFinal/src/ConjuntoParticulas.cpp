@@ -48,6 +48,8 @@ void ConjuntoParticulas::Copiar(const ConjuntoParticulas &unConjunto){
 
     reservaMemoria(unConjunto.GetCapacidad());
 
+    utiles = 0;
+
     for (int i = 0; i < unConjunto.GetUtiles(); i++){
         this->agregaParticula(unConjunto.obtieneParticula(i));
     }
@@ -193,9 +195,9 @@ ConjuntoParticulas & ConjuntoParticulas::operator = (const ConjuntoParticulas &u
 // Sobrecarga operator <<
 ostream & operator << (ostream & flujo, const ConjuntoParticulas &unConjunto){
 
-                        //Error unConjunto.utiles
+    flujo << " Nro Particulas: " << unConjunto.GetUtiles() << " Capacidad: " << unConjunto.GetCapacidad() << std::endl;
     for (int i = 0; i < unConjunto.GetUtiles(); i++){
-        flujo << unConjunto.obtieneParticula(i) << std::endl;        
+        flujo << "Part. " << i  << " => " << unConjunto.obtieneParticula(i) << std::endl;        
     }
 
     return flujo;
@@ -220,14 +222,17 @@ Particula & ConjuntoParticulas::operator [] (int i){
 const Particula & ConjuntoParticulas::operator[] (int i) const{
 
     assert (i >= 0 && i <= this->GetCapacidad());
-        return obtieneParticula(i);
+        return this->set[i];
 
 }
 
 
 // NEW
 // Sobrecarga operator +
-//Hay un error aqui
+/* PROBLEMA -> Solo se puede ir sumando particulas 1 a 1, sino error.
+    Cambiado en pruebaConjuntoFinal.cpp para que en vez de cp1 + p2 + p3 se haga:
+        cp1 + p2;
+        cp1 + p3; */
 
 void ConjuntoParticulas::operator + (const Particula &unaParticula){
     
@@ -237,10 +242,27 @@ void ConjuntoParticulas::operator + (const Particula &unaParticula){
 
 // NEW
 // Sobrecarga operator == 
+//Puede ser mejorado
 bool ConjuntoParticulas::operator == (const ConjuntoParticulas &unConjunto){
+    bool encontrado = false;
+    bool salir = false;
 
-    return this->GetUtiles() == unConjunto.GetUtiles() && this->set == unConjunto.set;
+    if(this->GetUtiles() == unConjunto.GetUtiles()){
+        for (int i = 0; i < utiles && !salir; i++){//Si ya se comprueba que ambos utiles son lo mismo se puede poner esto como i < utiles
+            encontrado = false;
+            for(int j = 0; j < utiles && !encontrado; j++){
+                if(this->obtieneParticula(i) == unConjunto.obtieneParticula(j)){
+                    encontrado = true;
+                    salir = false;
+                }else{
+                    encontrado = false;
+                    salir = true;
+                }
+            }
+        }
+    }
 
+    return encontrado;
 }
 
 // NEW distanciaPromedio
