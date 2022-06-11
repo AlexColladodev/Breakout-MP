@@ -229,7 +229,7 @@ const Particula & ConjuntoParticulas::operator[] (int i) const{
 // Sobrecarga operator +
 //Hay un error aqui
 
-ConjuntoParticulas ConjuntoParticulas::operator + (const Particula &unaParticula){
+void ConjuntoParticulas::operator + (const Particula &unaParticula){
     
     this->agregaParticula(unaParticula);
 
