@@ -70,7 +70,6 @@ void test2(string s) {
 
     cout << "Crear y mostrar conjunto de 5 particulas " << endl;
     ConjuntoParticulas cp1;
-
     rellenar(cp1, 5);
     /*
     float x = 1.0;

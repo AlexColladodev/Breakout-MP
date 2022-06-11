@@ -171,10 +171,10 @@ void ConjuntoParticulas::rebotar(int ancho, int alto){
 
 void ConjuntoParticulas::mostrarInfo(){
     for (int i = 0; i < utiles; i++){
-        cout << set[i].toString() << std::endl;
+        std::cout << set[i].toString() << std::endl;
     }
-    cout << "Utiles -> " << utiles << std::endl;
-    cout << "Capacidad -> " << capacidad << std::endl;
+    std::cout << "Utiles -> " << utiles << std::endl;
+    std::cout << "Capacidad -> " << capacidad << std::endl;
 }
 
 // NEW
@@ -227,20 +227,19 @@ const Particula & ConjuntoParticulas::operator[] (int i) const{
 
 // NEW
 // Sobrecarga operator +
-ConjuntoParticulas ConjuntoParticulas::operator + (const Particula &unaParticula) const{
+//Hay un error aqui
 
-    ConjuntoParticulas total = *this;
+ConjuntoParticulas ConjuntoParticulas::operator + (const Particula &unaParticula){
+    
+    this->agregaParticula(unaParticula);
 
-    total.agregaParticula(unaParticula);
-
-    return total;
 }
 
 // NEW
 // Sobrecarga operator == 
 bool ConjuntoParticulas::operator == (const ConjuntoParticulas &unConjunto){
 
-    return this->utiles == unConjunto.GetUtiles() && this->set == unConjunto.set;
+    return this->GetUtiles() == unConjunto.GetUtiles() && this->set == unConjunto.set;
 
 }
 
