@@ -46,14 +46,12 @@ void ConjuntoParticulas::redimensionaMemoria(int n){
 // NEW
 void ConjuntoParticulas::Copiar(const ConjuntoParticulas &unConjunto){
 
-    this->capacidad = unConjunto.capacidad;
-    this->utiles = unConjunto.utiles;
+    reservaMemoria(unConjunto.GetCapacidad());
 
-    // A continuación se reserva memoria y se copia set
-    reservaMemoria(unConjunto.capacidad);
+    for (int i = 0; i < unConjunto.GetUtiles(); i++){
+        this->agregaParticula(unConjunto.obtieneParticula(i));
+    }
 
-    for (int i = 0; i < unConjunto.GetUtiles(); i++)
-        this->set[i] = unConjunto.set[i];
 }
 
 /* ********* MÉTODOS PÚBLICOS ********* */
@@ -193,11 +191,11 @@ ConjuntoParticulas & ConjuntoParticulas::operator = (const ConjuntoParticulas &u
 
 // NEW
 // Sobrecarga operator <<
-std::ostream & operator << (std::ostream & flujo, const ConjuntoParticulas &unConjunto){
+ostream & operator << (ostream & flujo, const ConjuntoParticulas &unConjunto){
 
                         //Error unConjunto.utiles
     for (int i = 0; i < unConjunto.GetUtiles(); i++){
-        flujo << unConjunto[i] << std::endl;        
+        flujo << unConjunto.obtieneParticula(i) << std::endl;        
     }
 
     return flujo;
@@ -221,11 +219,9 @@ Particula & ConjuntoParticulas::operator [] (int i){
 
 const Particula & ConjuntoParticulas::operator[] (int i) const{
 
-    assert (i >= 0);
-    if (i <= this->capacidad){
-        // Devuelve una referencia a NULL pues se encuentra fuera de set
-        return this->set[i];
-    }
+    assert (i >= 0 && i <= this->GetCapacidad());
+        return obtieneParticula(i);
+
 }
 
 
