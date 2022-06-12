@@ -8,11 +8,11 @@ OBJ = $(HOME)/obj
 
 # Compilación
 
-all : $(BIN)/pruebaConjunto  clean
+all : $(BIN)/pruebaConjuntoFinal clean
 
 # Objetos
 
-$(OBJ)/pruebaConjunto.o : $(SRC)/pruebaConjunto.cpp
+$(OBJ)/pruebaConjuntoFinal.o : $(SRC)/pruebaConjuntoFinal.cpp
 	g++ -c -o $(OBJ)/pruebaConjuntoFinal.o $(SRC)/pruebaConjuntoFinal.cpp -I$(INCLUDE) -std=c++14
 
 $(OBJ)/ConjuntoParticulas.o : $(SRC)/ConjuntoParticulas.cpp 
@@ -24,7 +24,7 @@ $(OBJ)/Particula.o : $(SRC)/Particula.cpp
 	
 # Ejecutable
 
-$(BIN)/pruebaConjunto : $(OBJ)/pruebaConjunto.o $(OBJ)/ConjuntoParticulas.o $(OBJ)/Particula.o 
+$(BIN)/pruebaConjuntoFinal : $(OBJ)/pruebaConjuntoFinal.o $(OBJ)/ConjuntoParticulas.o $(OBJ)/Particula.o 
 	g++ -o $(BIN)/pruebaConjuntoFinal $(OBJ)/pruebaConjuntoFinal.o $(OBJ)/ConjuntoParticulas.o $(OBJ)/Particula.o 
 
 
