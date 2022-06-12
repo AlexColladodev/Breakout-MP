@@ -234,7 +234,7 @@ const Particula & ConjuntoParticulas::operator[] (int i) const{
         cp1 + p2;
         cp1 + p3; */
 
-void ConjuntoParticulas::operator + (const Particula &unaParticula){
+ConjuntoParticulas & ConjuntoParticulas::operator + (const Particula &unaParticula){
     
     this->agregaParticula(unaParticula);
 
@@ -288,32 +288,13 @@ double ConjuntoParticulas::distanciaPromedio(Particula unaParticula) const{
     return distancia / utiles;
 }
 
-double ConjuntoParticulas::distanciaPromedio() const{
-
-    double distancia = 0;
-    double Ax, Ay; //--> Son las X e Y de cada una de las particulas
-
-    
-    for(int i = 0; i < utiles; i++){
-        Ax = set[i].GetX();
-        Ay = set[i].GetY();
-
-        /*
-        Ax = obtieneParticula(i).GetX();
-        Ay = obtieneParticula(i).GetY();
-        */        
-
-        distancia += sqrt(pow(0 - Ax, 2) + pow(0 - Ay, 2));
-    }
-
-    return distancia / utiles;
-}
-
 // NEW
 // Sobrecarga del operador <
 bool ConjuntoParticulas::operator < (const ConjuntoParticulas &unConjunto) const{
 
-    return this->distanciaPromedio() < unConjunto.distanciaPromedio();
+    Particula unaParticula(0,0,0,0,0); //Se crea una particula, los valores importantes son x e y, respectivamente (0,0)
+
+    return this->distanciaPromedio(unaParticula) < unConjunto.distanciaPromedio(unaParticula);
 
 }
 

@@ -82,8 +82,7 @@ void test2(string s) {
      */
     cout << cp1 << endl;
     Particula p2(10,10,10,10,10), p3(11,11,11,11,11);
-    cp1 + p2;
-    cp1 + p3;
+    cp1 + p2 + p3;
     cout << cp1 << endl;
     end();
 }
@@ -184,8 +183,7 @@ void test6(string s) {
     Particula p2(0, 10, 1, 1, 3);
     Particula p3(10, 10, 1, 1, 3);
 
-    cp1 + p1;
-    cp1 + p2;
+    cp1 + p1 + p2;
     
     cp2 = cp1; // sobrecarga de asignacion
     cp2 + p3;

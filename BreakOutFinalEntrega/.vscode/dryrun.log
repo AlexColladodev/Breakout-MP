@@ -1,0 +1,12 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/alumno/Escritorio/MP/Breakout-MP-master/entregaFinal'
+g++ -c -o ./obj/breakout.o ./src/breakout.cpp -I./include -std=c++14 -lraylib
+g++ -c -o ./obj/ConjuntoParticulas.o ./src/ConjuntoParticulas.cpp -I./include -std=c++14 -lraylib
+g++ -c -o ./obj/Particula.o ./src/Particula.cpp -I./include -std=c++14 -lraylib
+g++ -c -o ./obj/GestionJuego.o ./src/GestionJuego.cpp -I./include -std=c++14 -lraylib
+g++ -c -o ./obj/pintar.o ./src/pintar.cpp -I./include -std=c++14 -lraylib
+g++ -o ./bin/breakout ./obj/breakout.o ./obj/ConjuntoParticulas.o ./obj/Particula.o ./obj/GestionJuego.o ./obj/pintar.o -lraylib
+echo "Limpiando objetos"
+rm ./obj/*.o
+make: Leaving directory '/home/alumno/Escritorio/MP/Breakout-MP-master/entregaFinal'
+ 
