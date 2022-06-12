@@ -234,7 +234,7 @@ const Particula & ConjuntoParticulas::operator[] (int i) const{
         cp1 + p2;
         cp1 + p3; */
 
-void ConjuntoParticulas::operator + (const Particula &unaParticula){
+ConjuntoParticulas & ConjuntoParticulas::operator + (const Particula &unaParticula){
     
     this->agregaParticula(unaParticula);
 

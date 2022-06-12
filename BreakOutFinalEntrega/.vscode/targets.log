@@ -1,12 +1,14 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # GNU Make 4.2.1
+ 
 # Built for x86_64-pc-linux-gnu
+ 
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun Jun 12 16:11:19 2022
+# Make data base, printed on Sun Jun 12 19:37:20 2022
 
 # Variables
 
@@ -53,7 +55,7 @@ VTE_VERSION = 6003
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
-JOURNAL_STREAM = 9:36265
+JOURNAL_STREAM = 9:32673
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # makefile (from 'Makefile', line 1)
@@ -69,13 +71,13 @@ MAKELEVEL := 0
 # environment
 XDG_DATA_DIRS = /usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
 # environment
-DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1001/bus,guid=2a9f74b3485ce1411b5b191a62a4f3d2
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1001/bus,guid=6cfac4268e37ef6cfae8e81a62a623fc
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
 _ = /usr/bin/code
 # environment
-MANAGERPID = 1333
+MANAGERPID = 1304
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
@@ -89,7 +91,7 @@ PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/
 # environment
 GPG_AGENT_INFO = /run/user/1001/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/ubuntu2004.localdomain:@/tmp/.ICE-unix/1942,unix/ubuntu2004.localdomain:/tmp/.ICE-unix/1942
+SESSION_MANAGER = local/ubuntu2004.localdomain:@/tmp/.ICE-unix/1904,unix/ubuntu2004.localdomain:/tmp/.ICE-unix/1904
 # environment
 XDG_RUNTIME_DIR = /run/user/1001
 # environment
@@ -99,7 +101,7 @@ VSCODE_LOG_STACK = false
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 12a04daf526e4a2ca5950fb7844cbb0c
+INVOCATION_ID = 2b32a2a85c514b2d838b126e9830f42a
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -119,7 +121,7 @@ PWD = /home/alumno/Escritorio/MP/Breakout-MP-master/entregaFinal
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 1890
+SSH_AGENT_PID = 1602
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -137,7 +139,7 @@ VSCODE_CODE_CACHE_PATH = /home/alumno/.config/Code/CachedData/c3511e6c69bb39013c
 # environment
 LOGNAME = alumno
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # automatic
 +F = $(notdir $+)
 # environment
@@ -163,7 +165,7 @@ SHLVL = 1
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1001/vscode-ipc-bdac81db-10fd-45d8-94da-67ae5e2e05f7.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1001/vscode-ipc-325c2cfe-3b9e-442d-b09d-816cd097ffef.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -182,8 +184,6 @@ XDG_CURRENT_DESKTOP = Unity
 LC_TELEPHONE = en_US.UTF-8
 # default
 MAKE_COMMAND := make
-# environment
-OLDPWD = /home/alumno/Escritorio/MP/Breakout-MP-master
 # default
 .VARIABLES := 
 # automatic
@@ -219,11 +219,11 @@ LC_ALL = C
 # environment
 DBUS_STARTER_BUS_TYPE = session
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/bf417ece_14a0_4374_8584_ad838a0b5b79
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/796906ef_42b7_4b07_9511_013f8624e701
 # automatic
 ^F = $(notdir $^)
 # environment
-GNOME_TERMINAL_SERVICE = :1.81
+GNOME_TERMINAL_SERVICE = :1.79
 # default
 SUFFIXES := 
 # environment
@@ -243,11 +243,11 @@ LANG = C
 # environment
 TERM = xterm-256color
 # environment
-VSCODE_PID = 8176
+VSCODE_PID = 2704
 # environment
-DBUS_STARTER_ADDRESS = unix:path=/run/user/1001/bus,guid=2a9f74b3485ce1411b5b191a62a4f3d2
+DBUS_STARTER_ADDRESS = unix:path=/run/user/1001/bus,guid=6cfac4268e37ef6cfae8e81a62a623fc
 # variable set hash-table stats:
-# Load=118/1024=12%, Rehash=0, Collisions=36/199=18%
+# Load=117/1024=11%, Rehash=0, Collisions=36/198=18%
 
 # Pattern-specific Variable Values
 
@@ -277,11 +277,11 @@ obj/Particula.o: src/Particula.cpp
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
- 
 #  recipe to execute (from 'Makefile', line 22):
 	g++ -c -o $(OBJ)/Particula.o $(SRC)/Particula.cpp -I$(INCLUDE) -std=c++14 -lraylib
 
 all: bin/breakout clean
+ 
 #  Command line target.
 #  Implicit rule search has been done.
 #  File does not exist.
@@ -303,7 +303,6 @@ obj/breakout.o: src/breakout.cpp
 # automatic
 # * := 
 # automatic
- 
 # + := src/breakout.cpp
 # automatic
 # | := 
@@ -379,7 +378,7 @@ src/Particula.cpp:
 # Not a target:
 src/breakout.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-12 16:10:27.051173848
+#  Last modified 2022-06-12 18:58:30.619423875
 #  File has been updated.
 #  Successfully updated.
 
@@ -392,7 +391,6 @@ clean:
 	-rm $(OBJ)/*.o
 
 # Not a target:
- 
 src/ConjuntoParticulas.cpp:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -400,7 +398,7 @@ src/ConjuntoParticulas.cpp:
 
 bin/breakout: obj/breakout.o obj/ConjuntoParticulas.o obj/Particula.o obj/GestionJuego.o obj/pintar.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-12 16:10:35.251174051
+#  Last modified 2022-06-12 18:58:50.283424363
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
@@ -443,6 +441,6 @@ obj/pintar.o: src/pintar.cpp
 # strcache performance: lookups = 59 / hit rate = 47%
 # hash-table stats:
 # Load=31/8192=0%, Rehash=0, Collisions=1/59=2%
-# Finished Make data base on Sun Jun 12 16:11:19 2022
+# Finished Make data base on Sun Jun 12 19:37:20 2022
 
  

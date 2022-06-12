@@ -7,5 +7,7 @@ const int MAX_VEL = 5;
 const int MIN_DIM = 600;
 const float RADIO = 7.0;
 const float MIN_DISTANCIA = 0.01;
+const int N_FIL = 6;
+const int COLUMNAS = 6;
 
 #endif

@@ -59,7 +59,7 @@ public:
 
     ConjuntoParticulas &operator = (const ConjuntoParticulas &unConjunto);
 
-    void operator + (const Particula &unaParticula);
+    ConjuntoParticulas & operator + (const Particula &unaParticula);
 
     double distanciaPromedio(Particula unaParticula) const;
 

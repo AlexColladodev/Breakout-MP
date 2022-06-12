@@ -8,5 +8,6 @@
 void pintarParticula(const Particula &unaParticula, Color c);
 void pintarConjuntoParticulas(const ConjuntoParticulas &unConjunto, Color c);
 void pintarBase(const Particula &p, Color c );
+void pintarBloques(const Particula & p, Color c);
 
 #endif

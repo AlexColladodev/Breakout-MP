@@ -34,6 +34,7 @@ public:
     void SetXY(float, float);
     void SetDX(float);
     void SetDY(float);
+    void SetY(int);
 
     void cambioSignoDY();
 

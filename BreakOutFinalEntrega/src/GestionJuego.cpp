@@ -30,3 +30,7 @@ void controlColisionesBase(Particula &unaParticula, Particula &otraParticula){
     
 }
 
+bool ganarJuego(const ConjuntoParticulas &unConjunto){
+    return unConjunto.GetUtiles() == 0;
+}
+

@@ -9,12 +9,10 @@
 //Movimiento A --> Izquierda // D --> Derecha
 char Movimiento();
 
-void controlColisiones(ConjuntoParticulas &unConjunto, const Particula &unaParticula);
+void controlColisiones(ConjuntoParticulas &unConjunto, Particula &unaParticula);
 
 void controlColisionesBase(Particula &unaParticula, Particula &otraParticula);
 
-bool finJuegoPerder(const Particula &unaParticula, const ConjuntoParticulas &unConjunto);
-
-bool finJuegoGanar(const ConjuntoParticulas &unConjunto);
+bool ganarJuego(const ConjuntoParticulas &unConjunto);
 
 #endif

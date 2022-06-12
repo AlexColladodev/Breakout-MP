@@ -63,6 +63,10 @@ void Particula::SetDY(float _dy) {
     dy = _dy;
 }
 
+void Particula::SetY(int _y){
+    y = _y;
+}
+
 void Particula::cambioSignoDY(){
     dy *= -1.0f;
 }
