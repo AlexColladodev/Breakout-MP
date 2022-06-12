@@ -1,8 +1,9 @@
 HOME = .
 BIN = $(HOME)/bin
 INCLUDE = $(HOME)/include
-SRC = $(HOME)/src
+SRCJUEGO = $(HOME)/srcJuego
 OBJ = $(HOME)/obj
+SRCTEST = $(HOME)/srcTests
 
 
 
@@ -12,23 +13,23 @@ all : $(BIN)/breakout  clean
 
 # Objetos
 
-$(OBJ)/pruebaConjuntoFinal.o : $(SRC)/pruebaConjuntoFinal.cpp
-	g++ -c -o $(OBJ)/pruebaConjuntoFinal.o $(SRC)/pruebaConjuntoFinal.cpp -I$(INCLUDE) -std=c++14 -lraylib
+$(OBJ)/pruebaConjuntoFinal.o : $(SRCTEST)/pruebaConjuntoFinal.cpp
+	g++ -c -o $(OBJ)/pruebaConjuntoFinal.o $(SRCTEST)/pruebaConjuntoFinal.cpp -I$(INCLUDE) -std=c++14 -lraylib
 
-$(OBJ)/ConjuntoParticulas.o : $(SRC)/ConjuntoParticulas.cpp 
-	g++ -c -o $(OBJ)/ConjuntoParticulas.o $(SRC)/ConjuntoParticulas.cpp -I$(INCLUDE) -std=c++14 -lraylib
+$(OBJ)/ConjuntoParticulas.o : $(SRCJUEGO)/ConjuntoParticulas.cpp 
+	g++ -c -o $(OBJ)/ConjuntoParticulas.o $(SRCJUEGO)/ConjuntoParticulas.cpp -I$(INCLUDE) -std=c++14 -lraylib
 
-$(OBJ)/Particula.o : $(SRC)/Particula.cpp
-	g++ -c -o $(OBJ)/Particula.o $(SRC)/Particula.cpp -I$(INCLUDE) -std=c++14 -lraylib
+$(OBJ)/Particula.o : $(SRCJUEGO)/Particula.cpp
+	g++ -c -o $(OBJ)/Particula.o $(SRCJUEGO)/Particula.cpp -I$(INCLUDE) -std=c++14 -lraylib
 
-$(OBJ)/GestionJuego.o : $(SRC)/GestionJuego.cpp
-	g++ -c -o $(OBJ)/GestionJuego.o $(SRC)/GestionJuego.cpp -I$(INCLUDE) -std=c++14 -lraylib
+$(OBJ)/GestionJuego.o : $(SRCJUEGO)/GestionJuego.cpp
+	g++ -c -o $(OBJ)/GestionJuego.o $(SRCJUEGO)/GestionJuego.cpp -I$(INCLUDE) -std=c++14 -lraylib
 
-$(OBJ)/pintar.o : $(SRC)/pintar.cpp
-	g++ -c -o $(OBJ)/pintar.o $(SRC)/pintar.cpp -I$(INCLUDE) -std=c++14 -lraylib
+$(OBJ)/pintar.o : $(SRCJUEGO)/pintar.cpp
+	g++ -c -o $(OBJ)/pintar.o $(SRCJUEGO)/pintar.cpp -I$(INCLUDE) -std=c++14 -lraylib
 
-$(OBJ)/breakout.o : $(SRC)/breakout.cpp
-	g++ -c -o $(OBJ)/breakout.o $(SRC)/breakout.cpp -I$(INCLUDE) -std=c++14 -lraylib
+$(OBJ)/breakout.o : $(SRCJUEGO)/breakout.cpp
+	g++ -c -o $(OBJ)/breakout.o $(SRCJUEGO)/breakout.cpp -I$(INCLUDE) -std=c++14 -lraylib
 
 	
 # Ejecutable

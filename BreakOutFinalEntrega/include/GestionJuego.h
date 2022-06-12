@@ -8,6 +8,7 @@
 
 //Movimiento A --> Izquierda // D --> Derecha
 char Movimiento();
+char Movimiento2();
 
 void controlColisiones(ConjuntoParticulas &unConjunto, Particula &unaParticula);
 
